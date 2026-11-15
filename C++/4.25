@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+
+    double a, b;
+    int c, m;
+
+    cout << "Введите число A: ";
+    cin >> a;
+
+    cout << "Введите число B: ";
+    cin >> b;
+
+    if (a > b || a <= 0 || b <= 0) {
+        cout << "Ошибка ввода";
+        return 0;
+    }
+
+    c = a/1 + 1;
+
+    while (c < b) {
+        m = c + 1;
+
+        while (m <= b) {
+            int x = c;
+            int y = m;
+
+            while (y != 0) {
+                int d = x % y;
+                x = y;
+                y = d;
+            }
+
+            if (x == 1) {
+                cout << "(" << c << ", " << m << ")" << endl;
+            }
+
+            m++;
+        }
+
+        c++;
+    }
+
+    return 0;
+}
