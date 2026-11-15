@@ -1,0 +1,6 @@
+def f(num):
+    num = bin(num)[2:]
+    result = num.replace('1','a').replace('0','1').replace('a','0')
+    return result
+num = int(input('Введите число: '))
+print(f'Исходное число: {bin(num)[2:]} \nРезультат инверсии: {f(num)}')
